@@ -1,0 +1,6 @@
+#foto-perfil {
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
