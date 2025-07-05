@@ -5,33 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Página Inicial</title>
 </head>
 
 <body>
     <header>
-        <img src="imagens/logo.png" alt="Logo do site" width="100px" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+        <img src="imagens/logoPreta (1).png" alt="Logo do site" class="logo">
+
+
     </header>
+    <nav class="menu">
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <a href="#home" class="sub-menu-link">
+                    <i class="fa-solid fa-house"></i>
+                    <p>Início</p>
+                    <a href="#home" class="sub-menu-link">
+                        <i class="fa-solid fa-house"></i>
+                        <p>Sobre Mim</p>
+                        <a href="#home" class="sub-menu-link">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Habilidades</p>
+                        </a>
+                        <a href="#home" class="sub-menu-link">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Projetos</p>
+            </div>
+        </div>
+    </nav>
     <main>
-        <section id="home" class="page-section active">
-            <img src="imagens/foto2.jpg" id="foto-perfil" alt="Foto de Nicolas Leonardo" width="200px">
+        <section id="home" class="perfil">
             <h1>Nicolas Leonardo</h1>
-            <p class="subtitle">Desenvolvedor Front-end</p>
-            <p class="tagline">"Em constante evolução, como todo bom sistema."</p>
-            <section id="sobre" class="page-section">
-                <h2>Sobre Mim</h2>
-                <p>Olá! Meu nome é Nicolas Leonardo e sou estudante de Análise e Desenvolvimento de Sistemas no
-                    Instituto Federal de São Paulo (IFSP). Tenho grande interesse por tecnologia e desenvolvimento de software, e estou sempre em busca de novos aprendizados e desafios que me permitam evoluir tanto tecnicamente quanto profissionalmente. Meu objetivo é desenvolver soluções funcionais, acessíveis e bem estruturadas, aliando usabilidade com boas práticas de desenvolvimento.</p>
-
-                <p>Sou uma pessoa curiosa, proativa e comprometida com a melhoria contínua. Acredito que a tecnologia é uma poderosa ferramenta de transformação, e estou determinado a fazer parte dessa evolução, contribuindo com ideias e soluções criativas para o mundo digital.</p>
+            <p>Em constante evolução, como todo bom sistema."</p>
+            <p id="highlight">Desenvolvedor Front-end</p>
+            <a href="#sobre" class="cta-button">Contato</a>
+            <figure><img src="imagens/avatar.png" alt="Foto de perfil"></figure>
+        </section>
+        <section id="habilidades" class="habilidades">
+            <h2>Habilidades</h2>
+            <article class="habilidade">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML5</h3>
+            </article>
+            <article class="habilidade">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS3</h3>
+            </article>
+            <article class="habilidade">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Nicolas Leonardo. Todos os direitos reservados.</p>
+        <article class="redes-sociais">
+            <a href="https://github.com/NicolasLeonardoo"><i class="fa-brands fa-github"></i></a>
+            <a href="www.linkedin.com/in/nicolas-leonardo-9b4124330"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </article>
+    </footer>
+    <script src="script/script.js"></script>
 </body>
-
+<script>
+    let subMenu = document.getElementById("subMenu");
+    
+    function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
 </html>
