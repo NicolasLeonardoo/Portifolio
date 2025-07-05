@@ -14,6 +14,22 @@
     --text: #ffffff;
 }
 
+body {
+    background-color: rgba(2, 0, 8, 0.966);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(45deg, rgba(190, 35, 35, 0.932) 20%, rgba(62, 2, 175, 0.904) 80%);
+}
+
 .menu {
     position: absolute;
     top: 30px;
@@ -29,7 +45,7 @@
     font-size: 2rem;
     cursor: pointer;
     z-index: 201;
-    color: #050505;
+    color: #ffffff;
     width: 100px;
     height: 100px;
     animation: pulse 2s infinite;
@@ -109,20 +125,17 @@
     transform: translateY(0);
 }
 
-
-body {
-    background-color: var(--dark-bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.perfil {
+#perfil {
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 12% 5%;
     background: radial-gradient(circle at 75% 30%, var(--accent-glow) 0%, transparent 30%);
+    flex: 1;
+    padding-right: 5rem;
+}
+
+.perfil-conteudo {
     flex: 1;
     padding-right: 5rem;
 }
@@ -142,6 +155,7 @@ figure img {
 
 }
 
+
 @keyframes float {
 
     0%,
@@ -154,20 +168,34 @@ figure img {
     }
 }
 
-.perfil h1 {
+#perfil h1 {
     font-size: 4rem;
+    font-family: poppins, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
     margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, var(--accent) 30%, var(--accent-light) 70%);
+    background: linear-gradient(45deg, rgba(190, 35, 35, 0.932), rgba(62, 2, 175, 0.904), rgba(62, 2, 175, 0.904), rgba(190, 35, 35, 0.932));
+    background-size: 400% 100%;
+    animation: gradient 10s linear infinite alternate;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+@keyframes gradient {
+    0% {
+        background-position-x: 0%;
+    }
 
+    100% {
+        background-position: 400%;
+    }
 }
 
-.perfil p {
+#perfil p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
     max-width: 600px;
+    color: var(--text);
 }
 
 .cta-button {
@@ -183,18 +211,189 @@ figure img {
 
 }
 
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background: linear-gradient(to right, #be2323, #3e02af);
-}
-
-
 .logo {
     width: 100px;
     height: auto;
     margin-right: 20px;
+}
+
+#habilidades {
+    padding: 5rem 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--text);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.habilidades h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+#habilidade-html {
+    background: #141414;
+    border-radius: 15px;
+    color: #fff;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+#habilidade-html:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+    background-color: rgba(255, 255, 255, 0.05);
+
+}
+
+#habilidade-html i {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--accent) 30%, var(--accent-light) 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 1rem;
+}
+
+#habilidade-css {
+    background-color: #141414;
+    border-radius: 15px;
+    color: #fff;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+#habilidade-css:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgb(167, 20, 130);
+    background-color: rgba(255, 255, 255, 0.05);
+
+}
+
+#habilidade-css i {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--accent) 30%, var(--accent-light) 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 1rem;
+}
+
+#habilidade-js {
+    background-color: #141414;
+    border-radius: 15px;
+    color: #fff;
+    padding: 2rem;
+    transition: 0.3s ease;
+}
+
+#habilidade-js:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-light);
+    background-color: rgba(255, 255, 255, 0.05);
+
+}
+
+#habilidade-js i {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--accent) 30%, var(--accent-light) 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 1rem;
+}
+
+footer {
+    background: var(--dark-bg);
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.redes-sociais {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.redes-sociais a {
+    color: var(--text);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    background: linear-gradient(45deg, var(--accent) 30%, var(--accent-light) 70%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    #perfil {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+    }
+
+    .perfil-conteudo {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    figure img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        padding-left: 2rem;
+    }
+}
+
+section {
+    min-height: 100vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 1.5s;
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1.5s;
+    transform: translateX(0);
+}
+.habilidade{
+    background-color: #141414;
+    border-radius: 15px;
+    color: #fff;
+    padding: 2rem;
 }

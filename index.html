@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+
     <title>Página Inicial</title>
 </head>
 
 <body>
-    
-    <header>
-        <img src="imagens/logoPreta (1).png" alt="Logo do site" class="logo">
-        <nav class="menu">
+
+    <nav class="menu">
         <button class="menu-toggle" aria-label="Abrir menu">
             <i class="fa-solid fa-bars"></i>
         </button>
@@ -27,38 +29,42 @@
             <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
-
-    </header>
     <main>
-        <section id="home" class="perfil">
-            <h1>Nicolas Leonardo</h1>
-            <p>Em constante evolução, como todo bom sistema."</p>
-            <p id="highlight">Desenvolvedor Front-end</p>
-            <a href="#sobre" class="cta-button">Contato</a>
+        <section id="perfil" class="hidden">
+            <div class="perfil-conteudo">
+                <h1 id="nome">Nicolas Leonardo</h1>
+                <p>"Em constante evolução, como todo bom sistema."</p>
+                <p id="highlight">Desenvolvedor Front-end</p>
+                <a href="#sobre" class="cta-button">Contato</a>
+            </div>
             <figure><img src="imagens/avatar.png" alt="Foto de perfil"></figure>
         </section>
-        <section id="habilidades" class="habilidades">
+
+        <section id="habilidades" class="hidden">
             <h2>Habilidades</h2>
-            <article class="habilidade">
+            <article class="habilidade" id="habilidade-html">
                 <i class="fa-brands fa-html5"></i>
                 <h3>HTML5</h3>
+                <p>Estrutura semântica otimizada para acessibilidade e SEO.</p>
             </article>
-            <article class="habilidade">
+            <article class="habilidade" id="habilidade-css">
                 <i class="fa-brands fa-css3-alt"></i>
                 <h3>CSS3</h3>
+                <p>Domínio de Flexbox, Grid e animações modernas responsivas.</p>
             </article>
-            <article class="habilidade">
+            <article class="habilidade" id="habilidade-js">
                 <i class="fa-brands fa-js"></i>
                 <h3>JavaScript</h3>
+                <p>Interações dinâmicas com foco em usabilidade e performance.</p>
             </article>
         </section>
     </main>
-    <footer>
+    <footer class="hidden">
         <p>&copy; 2025 Nicolas Leonardo. Todos os direitos reservados.</p>
         <article class="redes-sociais">
             <a href="https://github.com/NicolasLeonardoo"><i class="fa-brands fa-github"></i></a>
             <a href="www.linkedin.com/in/nicolas-leonardo-9b4124330"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/nicolas.lls/"><i class="fa-brands fa-instagram"></i></a>
         </article>
     </footer>
     <script src="script/script.js"></script>
