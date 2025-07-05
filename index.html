@@ -12,35 +12,23 @@
 </head>
 
 <body>
+    
     <header>
         <img src="imagens/logoPreta (1).png" alt="Logo do site" class="logo">
-
+        <nav class="menu">
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="menu-list">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
 
     </header>
-    <nav class="menu">
-        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-
-        <div class="sub-menu-wrap" id="subMenu">
-            <div class="sub-menu">
-                <div class="user-info">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <a href="#home" class="sub-menu-link">
-                    <i class="fa-solid fa-house"></i>
-                    <p>Início</p>
-                    <a href="#home" class="sub-menu-link">
-                        <i class="fa-solid fa-house"></i>
-                        <p>Sobre Mim</p>
-                        <a href="#home" class="sub-menu-link">
-                            <i class="fa-solid fa-house"></i>
-                            <p>Habilidades</p>
-                        </a>
-                        <a href="#home" class="sub-menu-link">
-                            <i class="fa-solid fa-house"></i>
-                            <p>Projetos</p>
-            </div>
-        </div>
-    </nav>
     <main>
         <section id="home" class="perfil">
             <h1>Nicolas Leonardo</h1>
@@ -75,11 +63,5 @@
     </footer>
     <script src="script/script.js"></script>
 </body>
-<script>
-    let subMenu = document.getElementById("subMenu");
-    
-    function toggleMenu() {
-        subMenu.classList.toggle("open-menu");
-    }
-</script>
+
 </html>
