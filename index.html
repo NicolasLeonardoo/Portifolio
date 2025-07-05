@@ -16,13 +16,13 @@
 </head>
 
 <body>
-
+    <canvas id="galaxy-bg"></canvas>
     <nav class="menu">
         <button class="menu-toggle" aria-label="Abrir menu">
             <i class="fa-solid fa-bars"></i>
         </button>
         <ul class="menu-list">
-            <li><a href="#home">Início</a></li>
+            <li><a href="#">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#habilidades">Habilidades</a></li>
             <li><a href="#projetos">Projetos</a></li>
@@ -35,13 +35,47 @@
                 <h1 id="nome">Nicolas Leonardo</h1>
                 <p>"Em constante evolução, como todo bom sistema."</p>
                 <p id="highlight">Desenvolvedor Front-end</p>
-                <a href="#sobre" class="cta-button">Contato</a>
+                <a href="#sobre" class="cta-button">Entrar em Contato</a>
             </div>
-            <figure><img src="imagens/avatar.png" alt="Foto de perfil"></figure>
+            <figure><img id="perfil-img" src="imagens/avatar.png" alt="Foto de perfil"></figure>
         </section>
-
+        <section id="sobre" class="hidden">
+            <h1 class="hidden">Sobre Mim</h1>
+            <section id="sobre-row" class="hidden">
+                <article class="sobre-textos">
+                    <p>Olá! Meu nome é Nicolas Leonardo e sou estudante de Análise e Desenvolvimento de Sistemas no
+                        Instituto Federal de São Paulo (IFSP). Tenho grande interesse por tecnologia e desenvolvimento
+                        de
+                        software, e estou sempre em busca de novos aprendizados e desafios que me permitam evoluir tanto
+                        tecnicamente quanto profissionalmente. Meu objetivo é desenvolver soluções funcionais,
+                        acessíveis e
+                        bem estruturadas, aliando usabilidade com boas práticas de desenvolvimento.</p>
+                        <p>Durante minha jornada como estudante de ADS, descobri o quanto é gratificante resolver problemas com criatividade e lógica. Cada linha de código representa uma possibilidade de transformar ideias em soluções reais, e isso é o que me motiva diariamente a aprender mais.</p>
+                </article>
+                <figure class="sobre-imagem">
+                    <img src="imagens/telacodigos.png" alt="Tela de Códigos">
+                </figure>
+            </section>
+            <section id="sobre-row" class="hidden">
+                <article class="sobre-textos">
+                    <p>Atualmente, estou focado em aprimorar minhas habilidades em HTML, CSS e JavaScript, com o
+                        objetivo de
+                        criar interfaces de usuário intuitivas e responsivas. Estou sempre atento às tendências do
+                        mercado e
+                        busco me atualizar constantemente, participando de cursos, workshops e projetos colaborativos.
+                    </p>
+                    <p>Sou uma pessoa curiosa, proativa e comprometida com a melhoria contínua. Acredito que a
+                        tecnologia é
+                        uma poderosa ferramenta de transformação, e estou determinado a fazer parte dessa evolução,
+                        contribuindo com ideias e soluções criativas para o mundo digital.</p>
+                </article>
+                <figure class="sobre-imagem">
+                    <img src="imagens/codando.png" alt="Laboratório de Informática">
+                </figure>
+            </section>
+        </section>
         <section id="habilidades" class="hidden">
-            <h2>Habilidades</h2>
+            <h1>Habilidades</h1>
             <article class="habilidade" id="habilidade-html">
                 <i class="fa-brands fa-html5"></i>
                 <h3>HTML5</h3>
