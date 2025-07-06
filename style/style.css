@@ -263,8 +263,8 @@ p#animado {
 #sobre {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    padding: 15rem 5%;
+    gap: 0.8rem;
+    padding: 5rem 5%;
     color: var(--text);
     font-size: 1.125rem;
 }
@@ -280,7 +280,8 @@ p#animado {
     letter-spacing: 2px;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    margin-bottom: 15rem;
+    margin-bottom: 0;
+    
 }
 
 #sobre-row {
