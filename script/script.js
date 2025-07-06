@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = "rgb(1, 0, 15)"; 
+            ctx.fillStyle = "rgb(1, 0, 15)";
             ctx.fillRect(0, 0, width, height);
 
             for (let b of bubbles) {
@@ -99,4 +99,5 @@ document.addEventListener('DOMContentLoaded', function () {
         animate();
     }
 });
+
 
