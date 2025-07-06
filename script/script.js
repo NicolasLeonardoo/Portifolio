@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 dy: 0.18,
                 blur: 40
             }
-            
+
         ];
 
         function animate() {
@@ -154,3 +154,32 @@ document.addEventListener('DOMContentLoaded', function () {
         animate();
     }
 });
+const form = document.getElementById('formContato');
+const resposta = document.getElementById('respostaUsuario');
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('telefone').value;
+    const assunto = document.getElementById('assunto').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    resposta.classList.remove('fade-in'); // reseta efeito
+
+    resposta.innerHTML = `
+        <h3>Dados enviados:</h3>
+        <p><strong>Nome:</strong> ${nome}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Telefone:</strong> ${telefone}</p>
+        <p><strong>Assunto:</strong> ${assunto}</p>
+        <p><strong>Mensagem:</strong> ${mensagem}</p>
+      `;
+
+    setTimeout(() => {
+        resposta.classList.add('fade-in'); // aplica o efeito suavemente
+    }, 10);
+
+});
+  
