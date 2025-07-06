@@ -37,7 +37,6 @@
     --glass-border: rgba(0, 0, 0, 0.1);
 }
 
-/* Particle background enhancement */
 #galaxy-bg {
     position: fixed;
     top: 0;
@@ -57,7 +56,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 20% 50%, rgba(190, 35, 56, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(62, 2, 175, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 80%, rgba(131, 4, 204, 0.1) 0%, transparent 50%);
@@ -65,12 +64,21 @@
 }
 
 @keyframes float-bg {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(10px) rotate(-1deg); }
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+
+    66% {
+        transform: translateY(10px) rotate(-1deg);
+    }
 }
 
-/* Glassmorphism effect */
 .glass-effect {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -80,7 +88,6 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Enhanced theme switch */
 #theme-switch {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -150,7 +157,6 @@ body {
     z-index: 1;
 }
 
-/* Enhanced menu */
 .menu {
     position: fixed;
     top: 30px;
@@ -271,7 +277,6 @@ body {
     transform: translateY(3.5rem);
 }
 
-/* Enhanced profile section */
 #perfil {
     min-height: 100vh;
     display: flex;
@@ -298,8 +303,17 @@ body {
 }
 
 @keyframes pulse-glow {
-    0%, 100% { transform: scale(1); opacity: 0.1; }
-    50% { transform: scale(1.2); opacity: 0.2; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
 }
 
 .perfil-conteudo {
@@ -316,7 +330,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
-    box-shadow: 
+    box-shadow:
         0 0 50px var(--primary-glow),
         0 0 100px var(--secondary-glow),
         inset 0 0 50px rgba(255, 255, 255, 0.1);
@@ -338,20 +352,43 @@ body {
 }
 
 @keyframes shine {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rotate-glow {
-    0% { box-shadow: 0 0 50px var(--primary-glow), 0 0 100px var(--secondary-glow); }
-    33% { box-shadow: 0 0 50px var(--secondary-glow), 0 0 100px var(--third-color); }
-    66% { box-shadow: 0 0 50px var(--third-color), 0 0 100px var(--primary-glow); }
-    100% { box-shadow: 0 0 50px var(--primary-glow), 0 0 100px var(--secondary-glow); }
+    0% {
+        box-shadow: 0 0 50px var(--primary-glow), 0 0 100px var(--secondary-glow);
+    }
+
+    33% {
+        box-shadow: 0 0 50px var(--secondary-glow), 0 0 100px var(--third-color);
+    }
+
+    66% {
+        box-shadow: 0 0 50px var(--third-color), 0 0 100px var(--primary-glow);
+    }
+
+    100% {
+        box-shadow: 0 0 50px var(--primary-glow), 0 0 100px var(--secondary-glow);
+    }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-1.25rem); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1.25rem);
+    }
 }
 
 #perfil h1 {
@@ -382,14 +419,29 @@ body {
 }
 
 @keyframes underline-expand {
-    0%, 100% { width: 0; }
-    50% { width: 100%; }
+
+    0%,
+    100% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
 }
 
 @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .cta-button {
@@ -445,8 +497,15 @@ p#highlight {
 }
 
 @keyframes text-gradient {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 p#animado {
@@ -461,14 +520,30 @@ p#animado {
 }
 
 @keyframes typing {
-    0% { width: 0; }
-    50% { width: 48ch; }
-    100% { width: 0; }
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 48ch;
+    }
+
+    100% {
+        width: 0;
+    }
 }
 
 @keyframes blink {
-    0%, 50% { border-color: var(--primary-color); }
-    51%, 100% { border-color: transparent; }
+
+    0%,
+    50% {
+        border-color: var(--primary-color);
+    }
+
+    51%,
+    100% {
+        border-color: transparent;
+    }
 }
 
 #sobre {
@@ -488,7 +563,7 @@ p#animado {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 10% 20%, rgba(190, 35, 56, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 90% 80%, rgba(62, 2, 175, 0.05) 0%, transparent 50%);
     pointer-events: none;
@@ -685,7 +760,6 @@ footer::before {
     font-size: 3rem;
 }
 
-/* Enhanced animations */
 section {
     min-height: 100vh;
 }
@@ -704,7 +778,6 @@ section {
     transform: translateY(0);
 }
 
-/* New scroll indicator */
 .scroll-indicator {
     position: fixed;
     top: 0;
@@ -718,11 +791,17 @@ section {
 }
 
 @keyframes gradient-flow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
-/* Enhanced responsive design */
 @media (max-width: 768px) {
     #perfil {
         flex-direction: column;
@@ -828,7 +907,6 @@ section {
     }
 }
 
-/* New utility classes */
 .text-glow {
     text-shadow: 0 0 10px var(--primary-glow);
 }
@@ -842,7 +920,6 @@ section {
     transition: transform 0.3s ease;
 }
 
-/* Loading animation */
 .loading-spinner {
     width: 40px;
     height: 40px;
@@ -854,6 +931,11 @@ section {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

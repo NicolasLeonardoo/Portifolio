@@ -173,7 +173,6 @@ form {
     }
 }
 
-/* Efeito de brilho no formulário */
 form::before {
     content: '';
     position: absolute;
@@ -434,7 +433,6 @@ button:hover::before {
     left: 100%;
 }
 
-/* Resposta do usuário */
 #respostaUsuario {
     margin-top: 30px;
     padding: 30px;
@@ -473,7 +471,6 @@ button:hover::before {
     font-weight: 600;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     body {
         padding: 15px;
@@ -541,7 +538,6 @@ button:hover::before {
     }
 }
 
-/* Animações de entrada */
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -606,7 +602,6 @@ footer {
     animation-fill-mode: both;
 }
 
-/* Efeito de hover personalizado para inputs */
 .input-field:hover {
     background: var(--glass-bg-hover);
     border-color: var(--border-hover);
@@ -618,7 +613,6 @@ textarea:hover {
     border-color: var(--border-hover);
 }
 
-/* Scrollbar personalizada */
 ::-webkit-scrollbar {
     width: 8px;
 }

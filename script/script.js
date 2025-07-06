@@ -158,7 +158,7 @@ const form = document.getElementById('formContato');
 const resposta = document.getElementById('respostaUsuario');
 
 form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Impede o envio do formulário
+    event.preventDefault(); 
 
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
@@ -166,7 +166,7 @@ form.addEventListener('submit', function (event) {
     const assunto = document.getElementById('assunto').value;
     const mensagem = document.getElementById('mensagem').value;
 
-    resposta.classList.remove('fade-in'); // reseta efeito
+    resposta.classList.remove('fade-in'); 
 
     resposta.innerHTML = `
         <h3>Dados enviados:</h3>
@@ -178,8 +178,9 @@ form.addEventListener('submit', function (event) {
       `;
 
     setTimeout(() => {
-        resposta.classList.add('fade-in'); // aplica o efeito suavemente
+        resposta.classList.add('fade-in'); 
     }, 10);
 
 });
+
   
