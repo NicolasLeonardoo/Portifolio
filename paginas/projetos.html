@@ -37,48 +37,97 @@
         </ul>
     </nav>
     <main>
-        <h1 class="page-title">MEUS PROJETOS</h1>
-        <p class="page-subtitle">Confira alguns dos meus trabalhos mais recentes</p>
+       <section id="projetos">
+        <h2>MEUS PROJETOS</h2>
+        <p>Confira alguns dos meus trabalhos mais recentes.</p>
 
-        <section class="projects-container">
-            <article>
-                <figure class="project-image"><img src="../imagens/sneakers.png"></figure>
-                <h2>Sneakers</h2>
-                <p class="project-description">
-                    Esse projeto é um site de vitrine interativa de sneakers que utiliza um carrossel animado para apresentar diferentes modelos de tênis com design moderno e transições suaves.
-                </p>
-                <ul class="project-tags">
-                    <li class="tag">HTML</li>
-                    <li class="tag">CSS</li>
-                    <li class="tag">JS</li>
-                </ul>
-                <footer class="project-links">
+        <div class="container-projetos">
+            
+            <article class="projeto-card">
+                <figure>
+                    <img src="../imagens/printSneakers.png" alt="Imagem do projeto Calculadora">
+                </figure>
+                <div class="card-content">
+                    <h3>Sneakers</h3>
+                    <p>Esse projeto é um site de vitrine interativa de sneakers que utiliza um carrossel animado para apresentar diferentes modelos de tênis com design moderno e transições suaves.</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JS</span>
+                    </div>
+                    <footer class="project-links">
                     <a href="https://nicolasleonardoo.github.io/Sneakers/" class="project-link"
                         target="_blank">Ver Projeto</a>
                     <a href="https://github.com/NicolasLeonardoo/Sneakers" class="project-link secondary"
-                        target="_blank">GitHub</a>
+                        target="_blank">Code</a>
                 </footer>
+                </div>
             </article>
-            <section class="projects-container">
-                <article>
-                    <figure class="project-image"><img src="../imagens/cafeteria.png"></figure>
-                    <h2>Cafeteria</h2>
-                    <p class="project-description">
-                        Projeto realizado durante aulas do ensino médio integrado. Desenvolvido com HTML, CSS e JS.
-                    </p>
-                    <ul class="project-tags">
-                        <li class="tag">HTML</li>
-                        <li class="tag">CSS</li>
-                        <li class="tag">JS</li>
-                    </ul>
+
+            <article class="projeto-card">
+                <figure>
+                    <img src="../imagens/cafeteria.png" alt="Imagem do projeto Lista de Tarefas">
+                </figure>
+                <div class="card-content">
+                    <h3>Cafeteria</h3>
+                    <p>Projeto realizado durante aulas do ensino médio integrado. Desenvolvido com HTML, CSS e JS.</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
                     <footer class="project-links">
-                        <a href="https://nicolasleonardoo.github.io/Cafeteria/" class="project-link" target="_blank">Ver
-                            Projeto</a>
-                        <a href="https://github.com/NicolasLeonardoo/Cafeteria.git" class="project-link secondary"
-                            target="_blank">GitHub</a>
-                    </footer>
-                </article>
-            </section>
+                    <a href="https://nicolasleonardoo.github.io/Cafeteria/" class="project-link"
+                        target="_blank">Ver Projeto</a>
+                    <a href="https://github.com/NicolasLeonardoo/Cafeteria" class="project-link secondary"
+                        target="_blank">Code</a>
+                </footer>
+                </div>
+            </article>
+
+            <article class="projeto-card">
+                <figure>
+                    <img src="../imagens/h1 gerador_de_senhas h1.jpg" alt="Imagem do projeto Santos Wine">
+                </figure>
+                <div class="card-content">
+                    <h3>Gerador de Senhas</h3>
+                    <p>Projeto desenvolvido como trabalho de encerramento de semestre no SENAI, com a proposta de criar uma empresa de vinhos e um site de apresentação.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                    </div>
+                    <footer class="project-links">
+                    <a href="https://nicolasleonardoo.github.io/Sneakers/" class="project-link"
+                        target="_blank">Ver Projeto</a>
+                    <a href="https://github.com/NicolasLeonardoo/Sneakers" class="project-link secondary"
+                        target="_blank">Code</a>
+                </footer>
+                </div>
+            </article>
+
+            <article class="projeto-card">
+                <figure>
+                    <img src="../imagens/formulario.png" alt="Imagem do projeto UrbanFlow">
+                </figure>
+                <div class="card-content">
+                    <h3>Formulario</h3>
+                    <p>Este projeto consiste em um formulário de contato moderno e funcional, construído do zero utilizando apenas tecnologias web fundamentais</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JS</span>
+                    </div>
+                    <footer class="project-links">
+                    <a href="https://nicolasleonardoo.github.io/Formulario/" class="project-link"
+                        target="_blank">Ver Projeto</a>
+                    <a href="https://github.com/NicolasLeonardoo/Formulario" class="project-link secondary"
+                        target="_blank">Code</a>
+                </footer>
+                </div>
+            </article>
+
+           
+
+        </div>
+    </section>
     </main>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');

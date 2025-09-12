@@ -220,76 +220,112 @@ main {
     opacity: 0.8;
 }
 
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+/* --- ESTILOS DA SEÇÃO DE PROJETOS --- */
+#projetos {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 4rem auto;
+    padding: 0 2rem;
 }
 
-article {
+#projetos h2 {
+    text-align: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--third-color), var(--secundary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#projetos>p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+/* --- CONTAINER DA GRADE DE PROJETOS --- */
+.container-projetos {
+    display: grid;
+    /* Coração do layout responsivo: 
+       Cria colunas de no mínimo 340px. 
+       Se houver espaço, elas crescem igualmente. 
+       Se não, o card quebra para a linha de baixo. */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+/* --- ESTILO DO CARD DE PROJETO --- */
+.projeto-card {
     background: var(--glass-bg);
-    border-radius: 20px;
-    padding: 2rem;
     border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-article::before {
+.projeto-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
+    /* Usando suas variáveis de cores originais para o brilho */
     background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
-    opacity: 0;
+    
+    opacity: 0; /* Começa invisível */
     transition: opacity 0.3s ease;
+    z-index: 1; /* Garante que a camada fique sobre a imagem, mas abaixo do texto */
 }
 
-article:hover::before {
-    opacity: 1;
-}
-
-article:hover {
-    transform: translateY(-10px);
+.projeto-card:hover {
+     transform: translateY(-8px);
+    
+    /* Usando suas variáveis de cor para a borda e brilho */
     border-color: var(--third-color);
     box-shadow: 0 20px 40px var(--secondary-glow);
+    
+}
+.projeto-card:hover::before {
+    opacity: 1; /* Torna o gradiente visível */
 }
 
-.project-image {
+/* --- IMAGEM DO CARD --- */
+.projeto-card figure {
     width: 100%;
     height: 200px;
+    /* Altura fixa para a área da imagem */
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    border-radius: 15px;
-    margin-bottom: 1.5rem;
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 100%;
+    /* A mágica para a imagem preencher o espaço sem distorcer */
+    object-fit: cover;
+
+}
+/* --- CONTEÚDO DE TEXTO DO CARD --- */
+.card-content {
+    padding: 1.5rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Faz esta div ocupar todo o espaço restante no card */
+    z-index: 2;
     position: relative;
-    overflow: hidden;
-}   
-
-.project-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease;
 }
 
-article:hover .project-image::before {
-    opacity: 0;
-}
-
-h2 {
+.card-content h3 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -298,33 +334,34 @@ h2 {
     z-index: 1;
 }
 
-.project-description {
+.card-content p {
     color: var(--text);
     opacity: 0.8;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.project-tags {
+/* --- TAGS DE TECNOLOGIA --- */
+.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
+    margin-top: auto;
+    /* Truque para empurrar as tags para o final do card */
+    padding-top: 1rem;
+    /* Espaçamento para não colar na descrição */
 }
 
 .tag {
     background: var(--glass-bg);
     color: var(--third-color);
+    font-size: 0.8rem;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.8rem;
     border: 1px solid var(--glass-border);
     transition: all 0.3s ease;
-    list-style: none;
+    font-family: poppins, sans-serif;
 }
 
 .tag:hover {
@@ -337,6 +374,7 @@ h2 {
     gap: 1rem;
     position: relative;
     z-index: 1;
+    margin-top: 1.5rem;
 }
 
 .project-link {
@@ -367,6 +405,7 @@ h2 {
     background: var(--third-color);
     color: var(--text);
 }
+
 
 .floating-elements {
     position: fixed;
@@ -418,9 +457,12 @@ h2 {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         transform: translateY(-20px) rotate(180deg);
     }
@@ -454,57 +496,197 @@ h2 {
     .page-title {
         font-size: 3.5rem;
     }
-    
+
     .page-subtitle {
         font-size: 1.3rem;
     }
-    
-    .projects-container {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 2.5rem;
-        max-width: 1400px;
+
+    /* --- ESTILOS DA SEÇÃO DE PROJETOS --- */
+    #projetos {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
     }
-    
-    article {
-        padding: 2.5rem;
+
+    #projetos h2 {
+        color: var(--cor-titulo);
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
     }
-    
-    .project-image {
-        height: 250px;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    .project-description {
+
+    #projetos>p {
+        color: var(--cor-texto-secundario);
         font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 3rem;
     }
-    
+
+    /* --- CONTAINER DA GRADE DE PROJETOS --- */
+    .container-projetos {
+        display: grid;
+        /* Coração do layout responsivo: 
+       Cria colunas de no mínimo 340px. 
+       Se houver espaço, elas crescem igualmente. 
+       Se não, o card quebra para a linha de baixo. */
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2rem;
+    }
+
+    /* --- ESTILO DO CARD DE PROJETO --- */
+    .projeto-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        overflow: hidden;
+        /* Essencial para as bordas arredondadas funcionarem na imagem */
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+    }
+
+    .projeto-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .projeto-card::before:hover {
+        opacity: 1;
+    }
+
+    .projeto-card:hover {
+        border-color: var(--third-color);
+        box-shadow: 0 20px 40px var(--secondary-glow);
+    }
+
+    /* --- IMAGEM DO CARD --- */
+    .projeto-card figure {
+        width: 100%;
+        height: 200px;
+        /* Altura fixa para a área da imagem */
+        background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    }
+
+    .projeto-card img {
+        width: 100%;
+        height: 100%;
+        /* A mágica para a imagem preencher o espaço sem distorcer */
+        object-fit: cover;
+
+    }
+
+    /* --- CONTEÚDO DE TEXTO DO CARD --- */
+    .card-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        /* Faz esta div ocupar todo o espaço restante no card */
+    }
+
+    .card-content h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--text);
+        position: relative;
+        z-index: 1;
+    }
+
+    .card-content p {
+        color: var(--text);
+        opacity: 0.8;
+        line-height: 1.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* --- TAGS DE TECNOLOGIA --- */
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: auto;
+        /* Truque para empurrar as tags para o final do card */
+        padding-top: 1rem;
+        /* Espaçamento para não colar na descrição */
+    }
+
+    .tag {
+        background: var(--glass-bg);
+        color: var(--third-color);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        border: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+    }
+
+    .tag:hover {
+        background: var(--third-color);
+        color: var(--text);
+    }
+
     .project-links {
-        gap: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        position: relative;
+        z-index: 1;
+        margin-top: 1.5rem;
     }
-    
+
     .project-link {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(45deg, var(--primary-color), var(--secundary-color));
+        color: var(--text);
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
     }
-    
+
+    .project-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px var(--primary-glow);
+    }
+
+    .project-link.secondary {
+        background: transparent;
+        border: 2px solid var(--third-color);
+        color: var(--third-color);
+    }
+
+    .project-link.secondary:hover {
+        background: var(--third-color);
+        color: var(--text);
+    }
+
     .floating-circle:nth-child(1) {
         width: 100px;
         height: 100px;
     }
-    
+
     .floating-circle:nth-child(2) {
         width: 150px;
         height: 150px;
     }
-    
+
     .floating-circle:nth-child(3) {
         width: 80px;
         height: 80px;
     }
-    
+
     .floating-circle:nth-child(4) {
         width: 120px;
         height: 120px;
@@ -515,48 +697,48 @@ h2 {
     .page-title {
         font-size: 2.5rem;
     }
-    
+
     .page-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .projects-container {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 2rem;
         padding: 0 1rem;
     }
-    
+
     article {
         padding: 2rem;
     }
-    
+
     .project-image {
         height: 180px;
     }
-    
+
     .menu-toggle {
         right: 30px;
     }
-    
+
     .theme-toggle {
         right: 100px;
     }
-    
+
     .floating-circle:nth-child(1) {
         width: 60px;
         height: 60px;
     }
-    
+
     .floating-circle:nth-child(2) {
         width: 90px;
         height: 90px;
     }
-    
+
     .floating-circle:nth-child(3) {
         width: 40px;
         height: 40px;
     }
-    
+
     .floating-circle:nth-child(4) {
         width: 70px;
         height: 70px;
@@ -568,113 +750,112 @@ h2 {
         margin-top: 60px;
         padding: 1rem;
     }
-    
+
     .page-title {
         font-size: 2rem;
         margin-bottom: 0.5rem;
     }
-    
+
     .page-subtitle {
         font-size: 1rem;
         margin-bottom: 2rem;
     }
-    
+
     .projects-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 0;
     }
-    
+
     article {
         padding: 1.5rem;
         margin: 0 0.5rem;
     }
-    
+
     .project-image {
         height: 150px;
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.3rem;
     }
-    
+
     .project-description {
         font-size: 0.95rem;
         margin-bottom: 1rem;
     }
-    
+
     .project-tags {
         margin-bottom: 1rem;
     }
-    
+
     .tag {
         font-size: 0.75rem;
         padding: 0.25rem 0.6rem;
     }
-    
+
     .project-links {
         flex-direction: column;
         gap: 0.8rem;
     }
-    
+
     .project-link {
         padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
         text-align: center;
     }
-    
+
     .menu-toggle {
         width: 3.5rem;
         height: 3.5rem;
         font-size: 1.5rem;
         right: 20px;
     }
-    
+
     .theme-toggle {
         width: 40px;
         height: 40px;
         font-size: 0.9rem;
         right: 80px;
     }
-    
+
     .menu-list {
         min-width: 12rem;
         transform: translateY(-9rem);
     }
-    
+
     .menu-list a {
         padding: 1rem 0.8rem;
         font-size: 0.9rem;
     }
-    
+
     .menu.open .menu-list {
         transform: translateY(3rem);
     }
-    
-     
+
+
     .floating-circle {
         display: none;
-    }   
-   
+    }
+
     article:hover {
         transform: none;
     }
-    
+
     .project-image::before {
         opacity: 0.2;
     }
-    
+
     nav {
         gap: 1rem;
     }
-    
+
     nav a {
         font-size: 0.9rem;
     }
-    
+
     .menu.open .menu-list {
         transform: translateY(3rem);
     }
 }
-    
