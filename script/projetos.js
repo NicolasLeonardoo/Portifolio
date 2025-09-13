@@ -1,15 +1,3 @@
-const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('open');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target)) {
-                menu.classList.remove('open');
-            }
-        });
 
         function toggleTheme() {
             document.body.classList.toggle('whitemode');

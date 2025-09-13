@@ -445,6 +445,7 @@ button:hover::before {
     transform: translateY(20px);
     transition: all 0.5s ease;
     display: none;
+
 }
 
 #respostaUsuario.fade-in {

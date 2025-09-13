@@ -10,11 +10,6 @@ const form = document.getElementById('formContato');
             const assunto = document.getElementById('assunto').value;
             const mensagem = document.getElementById('mensagem').value;
 
-            if (!nome || !email || !telefone || !assunto || !mensagem) {
-                alert('Por favor, preencha todos os campos do formulário.');
-                return;
-            }
-
             resposta.classList.remove('fade-in');
 
             resposta.innerHTML = `
@@ -29,8 +24,6 @@ const form = document.getElementById('formContato');
             setTimeout(() => {
                 resposta.classList.add('fade-in');
             }, 10);
-            alert('Formulário enviado com sucesso!');
-        });
         const mode = document.getElementById('mode_icon');
 
         mode.addEventListener('click', () => {
@@ -48,4 +41,4 @@ const form = document.getElementById('formContato');
             mode.classList.remove('fa-moon');
             form.classList.remove('light');
 
-        });
+        });});
